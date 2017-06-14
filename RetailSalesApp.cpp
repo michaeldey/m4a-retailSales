@@ -84,7 +84,11 @@ void transactions()
         std::cout<<"\nEnter quantity sold: ";
         std::cin>>quant;
         
-        //add quantity to products[][]
+        //display retail value of individual sale
+        //we subtract 1 from prodNum because product list starts at 1, not 0
+        std::cout<<"\nRetail value = " << products[prodNum-1][0]*quant<<endl;
+        
+        //add quantity to products[][1]
         //we subtract 1 from prodNum because product list starts at 1, not 0
         products[prodNum-1][1]+=quant;
     
