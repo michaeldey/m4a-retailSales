@@ -67,10 +67,26 @@ void mainMenu()
 
 void transactions()
 {
-    int prodNum;
+    int prodNum = -1;
+    double quant;
     system("cls");
     std::cout<< "--[ Sales Transactions] --"<<endl;
-    std::cout<< "\nEnter product number (1-5) or -1 to quit: ";
-    std::cin>>prodNum;
     
+    //loop until user selects -1 to exit
+    do {
+        //get product number
+        std::cout<< "\nEnter product number (1-5) or -1 to quit: ";
+        std::cin>>prodNum;
+    
+        if (prodNum == -1) break; //exit out of loop
+        
+        //get quatity sold
+        std::cout<<"\nEnter quantity sold: ";
+        std::cin>>quant;
+        
+        //add quantity to products[][]
+        //we subtract 1 from prodNum because product list starts at 1, not 0
+        products[prodNum-1][1]+=quant;
+    
+    }while (prodNum != -1);
 }
